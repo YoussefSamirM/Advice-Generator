@@ -3,7 +3,9 @@ let button = document.querySelector("button");
 let i = document.querySelector(".advice button i");
 
 async function getAdvice() {
-  let respone = await fetch("/Json/advice_list.json");
+  let respone = await fetch(
+    "https://raw.githubusercontent.com/YoussefSamirM/Advice-Generator/refs/heads/master/Json/advice_list.json"
+  );
   let data = await respone.json();
   setTimeout(() => {
     quote.innerHTML = data[Math.floor(Math.random() * data.length)].advice;
